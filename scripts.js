@@ -58,7 +58,7 @@ function displayPosts(username, posts) {
         <p>${post.body}</p>
     </div>`).join('')
     postsDiv.innerHTML = `
-    
+    <button class="close-modal" onclick="hidePosts()" id="close-modal">X</button>
         <h2>${username}'s Posts</h2>
         ${postsHtml}`
 
@@ -66,7 +66,10 @@ function displayPosts(username, posts) {
 }
 fetchAndDisplayUsers()
 postsDiv.addEventListener('click', e => e.stopPropagation())
-postsWrapperDiv.addEventListener('click', e => postsWrapperDiv.classList.remove('show'))
+postsWrapperDiv.addEventListener('click', e => hidePosts())
+function hidePosts(){
+    postsWrapperDiv.classList.remove('show')
+}
 document.addEventListener('keydown', (event) => {
 
     if (event.key === 'Escape') {

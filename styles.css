@@ -52,7 +52,11 @@ main{
     border-radius: 1em;
 }
 .posts .close-modal{
-    color: red;
+    padding: 1em;
+    position: absolute;
+    cursor: pointer;
+    top: 10vh;
+    right: 20vw;
 }
 .post{
     margin: 1em 2em;
